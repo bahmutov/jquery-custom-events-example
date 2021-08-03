@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      #master_switch {
+        margin-top: 1em;
+      }
+      .lightbulb {
+        font-size: x-large;
+      }
+      .lightbulb.on {
+        opacity: 1;
+      }
+      .lightbulb.off {
+        opacity: 0.3;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- example https://learn.jquery.com/events/introduction-to-custom-events/ -->
+    <div class="room" id="kitchen">
+      <h2>Kitchen</h2>
+      <div class="lightbulb off">💡</div>
+    </div>
+    <div class="room" id="bedroom">
+      <h2>Bedroom</h2>
+      <div class="lightbulb off">💡</div>
+    </div>
+    <button id="master_switch">Master switch</button>
+    <script src="app.js"></script>
+  </body>
+</html>

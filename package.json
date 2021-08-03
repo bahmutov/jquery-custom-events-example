@@ -1,0 +1,17 @@
+{
+  "name": "jquery-custom-events-example",
+  "version": "1.0.0",
+  "description": "Testing the application that sends custom jQuery events from Cypress",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "cypress run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^8.1.0",
+    "prettier": "^2.3.2"
+  }
+}
