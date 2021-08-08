@@ -17,6 +17,57 @@ it('toggles lights', () => {
 
 it('triggers custom event', () => {
   cy.visit('index.html')
+  cy.window().then((win) => {
+    cy.document().then((doc) => {
+      win.$(doc).on('lights:toggle', cy.stub().as('toggle'))
+    })
+  })
+
+  cy.get('#master_switch').click().click().click()
+  cy.get('@toggle').should('have.been.calledThrice')
+})
+
+it('triggers custom event', () => {
+  cy.visit('index.html').then((win) => {
+    cy.document().then((doc) => {
+      win.$(doc).on('lights:toggle', cy.stub().as('toggle'))
+    })
+  })
+
+  cy.get('#master_switch').click().click().click()
+  cy.get('@toggle').should('have.been.calledThrice')
+})
+
+it('triggers custom event', () => {
+  cy.visit('index.html')
+    .its('$')
+    .then(($) => {
+      cy.document().then((doc) => {
+        $(doc).on('lights:toggle', cy.stub().as('toggle'))
+      })
+    })
+
+  cy.get('#master_switch').click().click().click()
+  cy.get('@toggle').should('have.been.calledThrice')
+})
+
+it('triggers custom event', () => {
+  cy.visit('index.html')
+    .its('$')
+    .then(($) => {
+      cy.document()
+        .then($)
+        .then(($doc) => {
+          $doc.on('lights:toggle', cy.stub().as('toggle'))
+        })
+    })
+
+  cy.get('#master_switch').click().click().click()
+  cy.get('@toggle').should('have.been.calledThrice')
+})
+
+it('triggers custom event', () => {
+  cy.visit('index.html')
     .its('$')
     .then(($) => {
       cy.document()
